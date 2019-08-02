@@ -13,7 +13,7 @@ const getters = {
 // actions
 const actions = {
   checkout({ commit, state }, products) {
-    commit('setCartItems', { items: {} });
+    commit("setCartItems", { items: {} });
   }
 };
 
