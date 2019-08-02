@@ -2,7 +2,7 @@
   <div>
     <h1>
       Hello World
-      </h1>
+    </h1>
   </div>
 </template>
 
@@ -10,8 +10,8 @@
 export default {
   name: 'App',
   data: () => ({}),
-    created: function() {},
-  methods: {},
+  created: function() {},
+  methods: {}
 };
 </script>
 
