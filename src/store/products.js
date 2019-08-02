@@ -1,31 +1,31 @@
 // initial state
 const state = {
   items: []
-}
+};
 
 // getters
 const getters = {
   cartProducts: (state, getters, rootState) => {
     return true;
   }
-}
+};
 
 // actions
 const actions = {
-  checkout ({ commit, state }, products) {
-    commit('setCartItems', { items: {} })
+  checkout({ commit, state }, products) {
+    commit('setCartItems', { items: {} });
   }
-}
+};
 
 // mutations
 const mutations = {
-  pushProductToCart (state, { id }) {
+  pushProductToCart(state, { id }) {
     state.items.push({
       id,
       quantity: 1
-    })
+    });
   }
-}
+};
 
 export default {
   namespaced: true,
@@ -33,4 +33,4 @@ export default {
   getters,
   actions,
   mutations
-}
+};
