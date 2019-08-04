@@ -2,6 +2,8 @@ const path = require("path");
 const webpack = require("webpack");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
+const Fiber = require("fibers");
 
 module.exports = {
   entry: ["babel-polyfill", "./src/main.js"],
@@ -17,8 +19,18 @@ module.exports = {
         loader: "vue-loader"
       },
       {
-        test: /\.(scss|css)$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader"]
+        test: /\.(scss|css|sass)$/,
+        use: [
+          "vue-style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"),
+              fiber: Fiber
+            }
+          }
+        ]
       },
       {
         test: /\.js$/,
@@ -26,10 +38,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|eot|svg|ttf|woff|woff2)$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]?[hash]"
+          name: "file-loader?name=[name].[ext]"
         }
       }
     ]
@@ -40,7 +52,11 @@ module.exports = {
     },
     extensions: ["*", ".js", ".vue", ".json"]
   },
-  plugins: [new VueLoaderPlugin(), new CopyPlugin([{ from: "./public" }])],
+  plugins: [
+    new VueLoaderPlugin(),
+    new CopyPlugin([{ from: "./public" }]),
+    new VuetifyLoaderPlugin()
+  ],
   devServer: {
     contentBase: path.resolve(__dirname, "public"),
     historyApiFallback: true,
