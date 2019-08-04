@@ -2,7 +2,7 @@
 
 ## Tech Stack
 * Framework
-  * Vue
+  * Vue/Vuex
 * Infrastructure
   * S3
   * CloudFront
