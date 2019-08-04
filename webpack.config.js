@@ -8,7 +8,6 @@ module.exports = {
   devtool: "inline-cheap-module-source-map",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "/dist/",
     filename: "bundle.js"
   },
   module: {
