@@ -6,7 +6,7 @@
           <v-icon>dashboard</v-icon>
         </v-list-item-action>
         <v-list-item-content>
-          <a class="primary--text">Dashboard</a>
+          <a class="secondary--text">Dashboard</a>
         </v-list-item-content>
       </v-list-item>
       <v-list-item>
@@ -14,7 +14,7 @@
           <v-icon>settings</v-icon>
         </v-list-item-action>
         <v-list-item-content>
-          <a>Settings</a>
+          <a class="secondary--text">Settings</a>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -25,7 +25,7 @@
 export default {
   name: "Drawer",
   data: () => ({}),
-  created: () => {},
+  created() {},
   methods: {}
 };
 </script>

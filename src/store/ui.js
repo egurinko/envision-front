@@ -1,6 +1,6 @@
 // initial state
 const state = {
-  items: []
+  isPhone: false
 };
 
 // getters
@@ -12,18 +12,15 @@ const getters = {
 
 // actions
 const actions = {
-  checkout({ commit, state }, products) {
-    commit("setCartItems", { items: {} });
+  handleWindowSize({ commit }, isPhone) {
+    commit("updateIsPhone", isPhone);
   }
 };
 
 // mutations
 const mutations = {
-  pushProductToCart(state, { id }) {
-    state.items.push({
-      id,
-      quantity: 1
-    });
+  updateIsPhone(state, isPhone) {
+    state.isPhone = isPhone;
   }
 };
 

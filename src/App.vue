@@ -3,25 +3,41 @@
     <Drawer />
     <Navbar />
     <v-content>
+      {{ isPhone }}
       <router-view />
     </v-content>
   </v-app>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Drawer from "./components/Drawer";
 import Navbar from "./components/Navbar";
+
 export default {
   name: "App",
+  computed: {
+    ...mapState({
+      isPhone: state => state.ui.isPhone
+    })
+  },
   components: {
     Drawer,
     Navbar
   },
-  data: () => ({
-    drawer: null
-  }),
-  created: function() {},
-  methods: {}
+  data: () => ({}),
+  created() {
+    window.addEventListener("resize", this.handleWindowResize);
+  },
+  methods: {
+    handleWindowResize() {
+      const width = window.innerWidth;
+      this.$store.dispatch(
+        "ui/handleWindowSize",
+        width < this.$constant.PHONE_SIZE
+      );
+    }
+  }
 };
 </script>
 

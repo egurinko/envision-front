@@ -16,10 +16,11 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
+        exclude: /node_modules/,
         loader: "vue-loader"
       },
       {
-        test: /\.(scss|css|sass)$/,
+        test: /\.(scss|sass)$/,
         use: [
           "vue-style-loader",
           "css-loader",
@@ -60,8 +61,14 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, "public"),
     historyApiFallback: true,
-    noInfo: true,
-    overlay: true
+    // noInfo: true,
+    overlay: true,
+    lazy: false,
+    watchOptions: {
+      aggregateTimeout: 300,
+      ignored: /node_modules/,
+      poll: 100
+    }
   },
   performance: {
     hints: false

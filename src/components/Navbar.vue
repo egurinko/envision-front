@@ -9,7 +9,7 @@
 export default {
   name: "Navbar",
   data: () => ({}),
-  created: () => {},
+  created() {},
   methods: {}
 };
 </script>
