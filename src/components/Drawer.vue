@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer id="drawer" app clipped color="backgroud">
-    <v-list dense>
+    <v-list dense class="mx-5 pl-2">
       <v-list-item>
         <v-list-item-action>
           <v-icon>dashboard</v-icon>

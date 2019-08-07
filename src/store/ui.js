@@ -5,7 +5,7 @@ const state = {
 
 // getters
 const getters = {
-  cartProducts: (state, getters, rootState) => {
+  isPhone: (state, getters, rootState) => {
     return true;
   }
 };
