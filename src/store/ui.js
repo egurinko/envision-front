@@ -1,6 +1,7 @@
 // initial state
 const state = {
-  isPhone: false
+  isPhone: false,
+  isLoading: true
 };
 
 // getters
@@ -14,13 +15,19 @@ const getters = {
 const actions = {
   handleWindowSize({ commit }, isPhone) {
     commit("updateIsPhone", isPhone);
+  },
+  handleIsLoading({ commit }, isLoading) {
+    commit("updateIsLoading", isLoading);
   }
 };
 
-// mutations
+// mutations (reducer)
 const mutations = {
   updateIsPhone(state, isPhone) {
     state.isPhone = isPhone;
+  },
+  updateIsLoading(state, isLoading) {
+    state.isLoading = isLoading;
   }
 };
 

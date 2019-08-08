@@ -1,5 +1,6 @@
 <template>
   <v-app id="vuetify">
+    <Loader />
     <Drawer />
     <Navbar />
     <v-content>
@@ -11,6 +12,7 @@
 
 <script>
 import { mapState } from "vuex";
+import Loader from "./components/common/Loader";
 import Drawer from "./components/Drawer";
 import Navbar from "./components/Navbar";
 
@@ -23,7 +25,8 @@ export default {
   },
   components: {
     Drawer,
-    Navbar
+    Navbar,
+    Loader
   },
   data: () => ({}),
   created() {
