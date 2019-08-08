@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer id="drawer" app clipped color="backgroud">
-    <v-list dense class="mx-5 pl-2">
-      <v-list-item>
+    <v-list dense class="mx-5 my-5 pl-2">
+      <v-list-item class="link mb-2" @click="handleClick()">
         <v-list-item-action>
           <v-icon>dashboard</v-icon>
         </v-list-item-action>
@@ -9,7 +9,7 @@
           <a class="secondary--text">Dashboard</a>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item>
+      <v-list-item class="link" @click="handleClick('settings')">
         <v-list-item-action>
           <v-icon>settings</v-icon>
         </v-list-item-action>
@@ -26,7 +26,11 @@ export default {
   name: "Drawer",
   data: () => ({}),
   created() {},
-  methods: {}
+  methods: {
+    handleClick(route = "/") {
+      this.$router.push(route);
+    }
+  }
 };
 </script>
 
