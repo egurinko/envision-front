@@ -7,23 +7,15 @@ container: &container
       environment:
         TERM: xterm
 
-
 jobs:
-  build:
+  build-test:
     <<: *container
     steps:
       - checkout
 
-      # Install sudo for cypress/base because it's debian
-      - run:
-          name: Install sudo
-          command: apt-get update && apt-get install -y sudo
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run:
@@ -35,14 +27,14 @@ jobs:
           command: yarn build
 
       - run:
-          command: yarn cypress:install
-      
-      - run:
           name: Start app
           command: yarn dev
           background: true
+      
+      - run:
+          command: yarn cypress:install
 
-       - run:
+      - run:
           name: Run cypress test
           command: yarn test:wait
 
@@ -53,6 +45,6 @@ jobs:
 
 workflows:
   version: 2
-  build:
+  build-and-test:
     jobs:
-      - build
+      - build-test
