@@ -1,0 +1,7 @@
+{
+    "baseUrl": "https://envision-iot.herokuapp.com",
+    "env": {
+        "username": "cypress",
+        "password": "password"
+    }
+}
