@@ -6,7 +6,7 @@ const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
 const Fiber = require("fibers");
 
 module.exports = {
-  entry: ["babel-polyfill", "./src/main.js"],
+  entry: ["./src/main.ts"],
   devtool: "inline-cheap-module-source-map",
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -38,6 +38,14 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        }
+      },
+      {
         test: /\.(png|jpg|gif|svg|eot|svg|ttf|woff|woff2)$/,
         loader: "file-loader",
         options: {
@@ -50,7 +58,7 @@ module.exports = {
     alias: {
       vue$: "vue/dist/vue.esm.js"
     },
-    extensions: ["*", ".js", ".vue", ".json"]
+    extensions: ["*", ".js", ".ts", ".vue", ".json"]
   },
   plugins: [
     new VueLoaderPlugin(),

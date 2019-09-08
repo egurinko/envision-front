@@ -22,18 +22,18 @@
   </div>
 </template>
 
-<script>
-import { mapState } from "vuex";
-export default {
+<script lang="ts">
+import Vue from "vue";
+import { ResponseS } from "../store/modules/response/types";
+
+export default Vue.extend({
   name: "Response",
   computed: {
-    ...mapState({
-      response: state => state.response
-    })
-  },
-  created() {},
-  methods: {}
-};
+    response: function(): ResponseS {
+      return this.$store.getters["response/getResponse"];
+    },
+  }
+});
 </script>
 
 <style></style>
