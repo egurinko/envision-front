@@ -77,7 +77,6 @@ import Vue from "vue";
 import { AxiosRequestConfig } from "axios";
 import callAPI from "../../utils/callAPI";
 import Response from "../../components/Response.vue";
-import domain from "../../utils/domain";
 
 type Rule = (v: string) => string | boolean;
 type Match = () => string;
@@ -138,7 +137,7 @@ export default Vue.extend({
         }
       ];
 
-      const [userRegistrationResponse] = await callAPI(userRegistrationRequest);
+      await callAPI(userRegistrationRequest);
       if (this.$store.getters["response/getResponse"].status === 200) {
         // Something happens ?
       }

@@ -6,7 +6,7 @@ const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
 const Fiber = require("fibers");
 
 module.exports = {
-  entry: ["./src/main.ts"],
+  entry: "./src/main.ts",
   devtool: "inline-cheap-module-source-map",
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -39,18 +39,22 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
+        loader: "ts-loader",
         exclude: /node_modules/,
         options: {
-          appendTsSuffixTo: [/\.vue$/],
+          appendTsSuffixTo: [/\.vue$/]
         }
       },
       {
         test: /\.(png|jpg|gif|svg|eot|svg|ttf|woff|woff2)$/,
-        loader: "file-loader",
-        options: {
-          name: "file-loader?name=[name].[ext]"
-        }
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: "assets/[name].[ext]"
+            }
+          }
+        ]
       }
     ]
   },
@@ -66,7 +70,7 @@ module.exports = {
     new VuetifyLoaderPlugin()
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, "public"),
+    contentBase: path.resolve(__dirname, "public/"),
     historyApiFallback: true,
     // noInfo: true,
     overlay: true,

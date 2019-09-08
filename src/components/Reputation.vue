@@ -1,11 +1,6 @@
 <template>
   <v-container class="primary">
-    <v-layout
-      class="primary"
-      row
-      align-center
-      justify-center
-    >
+    <v-layout class="primary" row align-center justify-center>
       <v-flex
         v-for="(item, index) in reputations"
         :key="index"
@@ -27,9 +22,7 @@
           </v-icon>
         </v-btn>
         <v-list-item-title class="drawer-title pr-2">
-          {{
-            item.title
-          }}
+          {{ item.title }}
         </v-list-item-title>
       </v-flex>
     </v-layout>
@@ -45,25 +38,25 @@ import domain from "../utils/domain";
 type Reputation = {
   icon: string;
   title: string;
-}
+};
 
 type Data = {
-  reputations: Reputation[]
-}
+  reputations: Reputation[];
+};
 
 export default Vue.extend({
   name: "Reputation",
   data: (): Data => ({
     reputations: [
-        { icon: "mood", title: "Good" },
-        { icon: "mood_bad", title: "Bad" }
+      { icon: "mood", title: "Good" },
+      { icon: "mood_bad", title: "Bad" }
     ]
   }),
   methods: {
     async handleReputations(index: number): Promise<void> {
-      type Data = { 
-        [index:string] :  number | string;
-      }
+      type Data = {
+        [index: string]: number | string;
+      };
       let data: Data = {};
       await axios
         .get(`${domain}/envs`, {

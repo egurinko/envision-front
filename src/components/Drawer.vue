@@ -64,6 +64,7 @@
 import Vue from "vue";
 import Reputations from "./Reputation.vue";
 import { Route } from "../router/route.types";
+import "../assets/logo2.png";
 
 type Menu = {
   icon: string;

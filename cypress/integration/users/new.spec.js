@@ -4,6 +4,7 @@ describe("Users New", () => {
   const date = new Date().getTime();
   const username = String(date).slice(5);
   const password = "password";
+  const wait = 2000;
 
   beforeEach(() => {
     cy.server();
@@ -13,6 +14,7 @@ describe("Users New", () => {
     cy.login();
 
     cy.visit("/users/new");
+    cy.wait(wait);
   });
 
   it("should be rendered", () => {
@@ -27,7 +29,7 @@ describe("Users New", () => {
     cy.get("[data-cy=password]").type(password);
     cy.get("[data-cy=login-button]").click();
 
-    cy.wait("@users").then(res =>{
+    cy.wait("@users").then(res => {
       expect(res.status).eq(200);
     });
   });
