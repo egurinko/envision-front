@@ -1,5 +1,5 @@
 {
-    "baseUrl": "https://envision-iot.herokuapp.com",
+    "baseUrl": "http://localhost:8080",
     "env": {
         "username": "cypress",
         "password": "password"

@@ -36,10 +36,15 @@ jobs:
 
       - run:
           command: yarn cypress:install
-
+      
       - run:
+          name: Start app
+          command: yarn dev
+          background: true
+
+       - run:
           name: Run cypress test
-          command: yarn test:e2e:cli
+          command: yarn test:wait
 
       - save_cache:
           paths:

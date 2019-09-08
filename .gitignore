@@ -24,3 +24,7 @@ yarn-error.log*
 
 # .serverless files
 .serverless
+
+# Cypress
+/cypress/screenshots/
+/cypress/videos/
