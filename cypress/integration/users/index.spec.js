@@ -5,7 +5,7 @@ describe("Users", () => {
     cy.server();
     cy.route("POST", "/api/auth/login").as("login");
     cy.route("GET", "/api/auth/users").as("users");
-    cy.route("GET", "/api/contributions").as("contributions");    
+    cy.route("GET", "/api/contributions").as("contributions");
     cy.route("POST", "/api/training-data").as("postTrainningData");
 
     cy.login();
@@ -19,8 +19,8 @@ describe("Users", () => {
   });
 
   it("contribution graph should be rendered", () => {
-    cy.get("[data-cy=mood]").click();
-    cy.wait("@postTrainningData").then(res =>{
+    cy.get("[data-cy=mood]").click({ force: true });
+    cy.wait("@postTrainningData").then(res => {
       expect(res.status).eq(200);
     });
 

@@ -2,6 +2,10 @@
 
 describe("Drawer", () => {
   beforeEach(() => {
+    cy.server();
+    cy.route("GET", "/api/comfort").as("comfort");
+    cy.route("GET", "/api/envs").as("envs");
+
     cy.visit("/");
   });
 
@@ -18,13 +22,15 @@ describe("Drawer", () => {
   });
 
   it("icons should enable users to go target routes", () => {
-    cy.get("[data-cy=bar_chart]").click();
+    cy.wait(["@comfort", "@envs"]);
+
+    cy.get("[data-cy=bar_chart]").click({ force: true });
     cy.url().should("include", "/graphs");
 
-    cy.get("[data-cy=supervisor_account]").click();
+    cy.get("[data-cy=supervisor_account]").click({ force: true });
     cy.url().should("include", "/users");
 
-    cy.get("[data-cy=home]").click();
+    cy.get("[data-cy=home]").click({ force: true });
     cy.url().should("include", "/");
   });
 });

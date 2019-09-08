@@ -15,12 +15,12 @@ describe("Reputation", () => {
   });
 
   it("reputation button should work", () => {
-    cy.get("[data-cy=mood]").click();
+    cy.get("[data-cy=mood]").click({ force: true });
     cy.wait("@postTrainningData").then(res => {
       expect(res.status).eq(200);
     });
 
-    cy.get("[data-cy=mood_bad]").click();
+    cy.get("[data-cy=mood_bad]").click({ force: true });
     cy.wait("@postTrainningData").then(res => {
       expect(res.status).eq(200);
     });
