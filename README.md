@@ -105,9 +105,16 @@ sls deploy -s <STAGE NAME>
 
 3. Uploaded static files to deployed infra
 
+Because you can upload them through circleCI workflow, just comment out circleCI config file.
+But to upload files to AWS, you need to set environmental variables. Please go to the project setting. 
+
 ```
-./deploy.sh <STAGE NAME>
+AWS_ACCESS_KEY_ID = <AWS_ACCESS_KEY_ID>
+AWS_SECRET_ACCESS_KEY = <AWS_SECRET_ACCESS_KEY>
+
 ```
+
+In circleCI config.yml, you need bucket name for deploy.
 
 ### Cleanup
 
@@ -137,20 +144,3 @@ sls remove -s <STAGE NAME>
 - [AWS](https://aws.amazon.com/jp/)
 - [CircleCI](https://circleci.com/)
 - [Cypress](https://www.cypress.io)
-
-
-# Frontend Template
-
-## Tech Stack
-* Framework
-  * Vue/Vuex
-  * Vuetify
-* Infrastructure
-  * S3
-  * CloudFront
-  * Serverless framework for deploy
-* CI
-  * CircleCI
-* Options
-  * Dependabot if you need
-
