@@ -73,7 +73,7 @@ resources:
               QueryString: true
             SmoothStreaming: false
             TargetOriginId: S3Origin
-            ViewerProtocolPolicy: https-only
+            ViewerProtocolPolicy: redirect-to-https
     StaticCloudFrontOriginAccessIdentity:
       Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
       Properties:
