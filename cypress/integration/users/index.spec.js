@@ -17,12 +17,12 @@ describe("Users", () => {
     expect(cy.contains("super")).to.exist;
   });
 
-  // it("contribution graph should be rendered", () => {
-  //   cy.get("[data-cy=mood]").click({ force: true });
-  //   cy.wait("@postTrainningData").then(res => {
-  //     expect(res.status).eq(200);
-  //   });
+  it("contribution graph should be rendered", () => {
+    cy.get("[data-cy=mood]").click({ force: true });
+    cy.wait("@postTrainningData").then(res => {
+      expect(res.status).eq(200);
+    });
 
-  //   expect(cy.get("[data-cy=contribution-graph]")).to.exist;
-  // });
+    expect(cy.get("[data-cy=contribution-graph]")).to.exist;
+  });
 });

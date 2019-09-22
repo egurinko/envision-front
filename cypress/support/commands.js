@@ -35,5 +35,6 @@ Cypress.Commands.add("login", (userType, options = {}) => {
 
   cy.wait("@login").then(res => {
     expect(res.status).eq(200);
+    cy.setCookie("envision_session", res.response.body.token);
   });
 });

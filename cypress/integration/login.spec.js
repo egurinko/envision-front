@@ -20,6 +20,7 @@ describe("Login", () => {
 
     cy.wait("@login").then(res => {
       expect(res.status).eq(200);
+      cy.setCookie("envision_session", res.response.body.token);
       cy.getCookie("envision_session").should("have.property", "value");
     });
   });
