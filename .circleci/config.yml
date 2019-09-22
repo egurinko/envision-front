@@ -25,6 +25,11 @@ jobs:
       - run:
           name: Build app
           command: yarn build
+      
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - dist/*
 
       - run:
           name: Start app
@@ -44,27 +49,18 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
   
   deploy-prd:
-    <<: *container
+    docker:
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/repo
     steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-
       - run:
-          name: Install dependencies
-          command: yarn install
-
+          name: Install awscli
+          command: sudo pip install awscli
+      - attach_workspace:
+          at: ~/repo
       - run:
-          name: Deploy
-          command: ./deploy.sh production
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          name: Deploy to S3
+          command: aws s3 sync dist s3://envision-production --delete
 
 workflows:
   version: 2
