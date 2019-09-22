@@ -56,7 +56,7 @@ ENVISION provides three features,
 
 ## Demo Page
 
-[Demo Page](https://envision-iot.herokuapp.com) is here! You can check demo IoT project!
+[Demo Page](https://egurinko.work) is here! You can check demo IoT project!
 
 ## Setup
 
@@ -130,7 +130,7 @@ sls remove -s <STAGE NAME>
 
 ## Links
 
-- [DEMO PAGE](https://envision-iot.herokuapp.com/)
+- [DEMO PAGE](https://egurinko.work)
 - [Vue](https://vuejs.org/)
 - [Vuetify](https://vuetifyjs.com/en/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -153,6 +153,4 @@ sls remove -s <STAGE NAME>
   * CircleCI
 * Options
   * Dependabot if you need
-
-## Deployment Process
 
