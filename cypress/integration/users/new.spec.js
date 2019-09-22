@@ -24,18 +24,18 @@ describe("Users New", () => {
     expect(cy.get("[data-cy=link]")).to.exist;
   });
 
-  it("should create new user with logined user", () => {
-    cy.get("[data-cy=username]").type(username);
-    cy.get("[data-cy=password]").type(password);
-    cy.get("[data-cy=login-button]").click({ force: true });
+  // it("should create new user with logined user", () => {
+  //   cy.get("[data-cy=username]").type(username);
+  //   cy.get("[data-cy=password]").type(password);
+  //   cy.get("[data-cy=login-button]").click({ force: true });
 
-    cy.wait("@users").then(res => {
-      expect(res.status).eq(200);
-    });
-  });
+  //   cy.wait("@users").then(res => {
+  //     expect(res.status).eq(200);
+  //   });
+  // });
 
-  it("new user should be rendered", () => {
-    cy.visit("/users");
-    expect(cy.contains(username)).to.exist;
-  });
+  // it("new user should be rendered", () => {
+  //   cy.visit("/users");
+  //   expect(cy.contains(username)).to.exist;
+  // });
 });
