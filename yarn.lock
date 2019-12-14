@@ -1045,10 +1045,10 @@
   dependencies:
     axios "*"
 
-"@types/chart.js@^2.8.10":
-  version "2.8.10"
-  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.8.10.tgz#df3a74630e25310e42e4a90a17c51b5a2e0691f4"
-  integrity sha512-lqfq12r5midn9wr+TfzAnRpVRkHwwQcyLnXI2URy7+cQLp+xTItKFCM1K5hDuQSz8zOvye9c8DrFNqZrTs6WCQ==
+"@types/chart.js@^2.9.5":
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.9.5.tgz#41c9997a59b6da2b23acdf4e8d73270bb9730d4e"
+  integrity sha512-pTqoAQkXw7mY+1Po1ziICPPKjEriO8AKrcLBJ3bf45h7SF22bWZ+Jm+4ogPg2W6Y+73CspersFGysHlAw3cm2A==
 
 "@types/events@*":
   version "3.0.0"
