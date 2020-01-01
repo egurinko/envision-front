@@ -12,23 +12,23 @@ export type ChartAnnotationOption = {
     backgroundColor: string;
     fontSize: number;
     content: string;
-  }
+  };
 };
 
 export type ChartAnnotationOptions = {
   annotation: {
-    annotations: ChartAnnotationOption[]
-  }
+    annotations: ChartAnnotationOption[];
+  };
 };
 
 export type Annotations = {
-  TEMPERATURE?: Annotation,
-  HUMIDITY?: Annotation,
-  CO2?: Annotation,
-  LUX?: Annotation,
-  PRESSURE?: Annotation,
-  "COLOR TEMPERATURE": Annotation,
-  SNACK?: Annotation
+  TEMPERATURE?: Annotation;
+  HUMIDITY?: Annotation;
+  CO2?: Annotation;
+  LUX?: Annotation;
+  PRESSURE?: Annotation;
+  "COLOR TEMPERATURE": Annotation;
+  SNACK?: Annotation;
 };
 
 export type Annotation = {

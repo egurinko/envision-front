@@ -17,7 +17,7 @@ export const setCookie = (token: string, username: string): void => {
 export type Cookie = {
   token: string;
   username: string;
-}
+};
 
 export const getCookie = (): Cookie => {
   let token: string = "";

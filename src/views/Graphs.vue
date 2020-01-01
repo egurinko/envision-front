@@ -3,11 +3,7 @@
     <Response />
     <timespan-button @on-click="onClick" />
 
-    <v-layout
-      v-if="!isLoading"
-      class="primary"
-      wrap
-    >
+    <v-layout v-if="!isLoading" class="primary" wrap>
       <v-flex
         v-for="(data, i) in chartData"
         :key="i"
@@ -19,11 +15,7 @@
         shrink
         class="pa-3 my-3"
       >
-        <v-card
-          class="secondary"
-          text
-          elevation="0"
-        >
+        <v-card class="secondary" text elevation="0">
           <LineChart
             :id="envs[i].key"
             :chart-data="data"
@@ -48,29 +40,32 @@ import callAPI from "../utils/callAPI";
 // @ts-ignore: Unreachable code error
 import * as chatjsAnnotation from "chartjs-plugin-annotation";
 import domain from "../utils/domain";
-import annotations, { ChartAnnotationOptions, Annotations } from "../utils/annotations";
+import annotations, {
+  ChartAnnotationOptions,
+  Annotations
+} from "../utils/annotations";
 import Chart from "chart.js";
 
 type OriginalEnvData = {
   _id: string;
   value: number;
   timestamp: string;
-}
+};
 
-export type OriginalEnv =  { key: string, data: OriginalEnvData[]};
+export type OriginalEnv = { key: string; data: OriginalEnvData[] };
 
 type EnvData = {
   value: number;
   time: string;
-}
+};
 
-type Env = { key: string, data: EnvData[]};
+type Env = { key: string; data: EnvData[] };
 
 type Data = {
   envs: Env[] | null;
   annotations: Annotations;
-  chatjsAnnotation: ChartAnnotationOptions
-}
+  chatjsAnnotation: ChartAnnotationOptions;
+};
 
 export default Vue.extend({
   name: "Graphs",
@@ -80,16 +75,18 @@ export default Vue.extend({
     Response
   },
   data: (): Data => ({
-      envs: null,
-      chatjsAnnotation,
-      annotations
+    envs: null,
+    chatjsAnnotation,
+    annotations
   }),
   computed: {
     chartData: function(): Chart.ChartData[] | undefined {
       if (this.envs === null) return;
       const chartData: Chart.ChartData[] = [];
       for (let i in this.envs) {
-        chartData.push((this as any).makeChartData(this.envs[i].data, this.envs[i].key));
+        chartData.push(
+          (this as any).makeChartData(this.envs[i].data, this.envs[i].key)
+        );
       }
       return chartData;
     },
@@ -152,7 +149,7 @@ export default Vue.extend({
     onClick(): void {
       (this as any).init();
     },
-    makeChartData(data: EnvData[], key: string): Chart.ChartData | undefined  {
+    makeChartData(data: EnvData[], key: string): Chart.ChartData | undefined {
       return {
         labels: data.map(each => each.time),
         datasets: [

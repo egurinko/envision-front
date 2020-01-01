@@ -1,31 +1,12 @@
 <template>
   <v-container class="primary">
-    <v-layout
-      row
-      wrap
-      justify-space-around
-    >
-      <v-flex
-        xs12
-        class="timespan"
-      >
+    <v-layout row wrap justify-space-around>
+      <v-flex xs12 class="timespan">
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn
-              color="lightGreen"
-              tile
-              outlined
-              medium
-              data-cy="timespan-button"
-              v-on="on"
-            >
-              <v-icon
-                size="20"
-                color="white"
-                left
-              >
-                add_alarm
-              </v-icon><span class="white--text">{{ selectedTimespan }}</span>
+            <v-btn color="lightGreen" tile outlined medium data-cy="timespan-button" v-on="on">
+              <v-icon size="20" color="white" left>add_alarm</v-icon>
+              <span class="white--text">{{ selectedTimespan }}</span>
             </v-btn>
           </template>
           <v-list class="primary">
@@ -36,10 +17,7 @@
               @click="onClick(key)"
             >
               <v-list-item-content>
-                <v-list-item-title
-                  class="mx-3"
-                  v-text="key"
-                />
+                <v-list-item-title class="mx-3" v-text="key" />
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -54,13 +32,13 @@ import Vue from "vue";
 import convertTimespan from "../utils/convertTimespan";
 
 type Data = {
-  convertTimespan: { [index:string] :  number };
-}
+  convertTimespan: { [index: string]: number };
+};
 
 export default Vue.extend({
   name: "TimespanButton",
   data: (): Data => ({
-      convertTimespan: convertTimespan
+    convertTimespan: convertTimespan
   }),
   computed: {
     convertedTimespan: function(): number {
@@ -72,10 +50,7 @@ export default Vue.extend({
   },
   methods: {
     onClick(hours: string): void {
-      if (
-        this.convertedTimespan ===
-        convertTimespan[hours]
-      ) {
+      if (this.convertedTimespan === convertTimespan[hours]) {
         return;
       }
       this.$store.dispatch("ui/setTimespan", hours);

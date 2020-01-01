@@ -1,12 +1,6 @@
 <template>
   <v-toolbar class="elevation-0 toolbar">
-    <img
-      v-if="isPhone"
-      width="35"
-      height="35"
-      class="ml-2"
-      :src="require('../assets/logo2.png')"
-    >
+    <img v-if="isPhone" width="35" height="35" class="ml-2" :src="require('../assets/logo2.png')" />
     <v-btn
       v-if="!isLoggedIn"
       color="lightGreen"
@@ -18,28 +12,10 @@
     >
       <span class="auth pa-1">Login</span>
     </v-btn>
-    <div
-      v-if="isLoggedIn"
-      class="toolbar-button"
-    >
-      <v-icon
-        v-if="!isPhone"
-        class="account-icon"
-        dark
-      >
-        account_circle
-      </v-icon>
-      <span
-        v-if="!isPhone"
-        class="account-username"
-      >{{ username }}</span>
-      <v-btn
-        color="lightGreen"
-        tile
-        outlined
-        small
-        @click="handleLogout"
-      >
+    <div v-if="isLoggedIn" class="toolbar-button">
+      <v-icon v-if="!isPhone" class="account-icon" dark>account_circle</v-icon>
+      <span v-if="!isPhone" class="account-username">{{ username }}</span>
+      <v-btn color="lightGreen" tile outlined small @click="handleLogout">
         <span class="auth pa-1">Logout</span>
       </v-btn>
     </div>
@@ -85,7 +61,7 @@ export default Vue.extend({
       this.$store.dispatch("user/setUsername", "");
       removeCookie();
       setTimeout(() => {
-        if (this.$route.path !== "/" ) {
+        if (this.$route.path !== "/") {
           this.$router.push("/");
         }
       }, 1000);
@@ -94,10 +70,10 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.toolbar{
+.toolbar {
   padding-top: 2%;
 }
-.toolbar-button{
+.toolbar-button {
   margin-left: auto;
   margin-right: 3%;
   margin-top: 5px;

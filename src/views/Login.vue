@@ -1,34 +1,14 @@
 <template>
   <v-container class="primary">
-    <v-layout
-      class="primary"
-      justify-center
-      row
-    >
-      <v-card
-        class="secondary"
-        :class="{ card: isPhone }"
-        elevation="0"
-      >
+    <v-layout class="primary" justify-center row>
+      <v-card class="secondary" :class="{ card: isPhone }" elevation="0">
         <Response />
         <v-container class="secondary">
-          <v-layout
-            class="secondary"
-            align-center
-            column
-          >
-            <v-flex
-              xs4
-              class="mt-4 mb-4"
-            >
-              <div class="title font-weight-bold lightGreen--text">
-                Login to your account.
-              </div>
+          <v-layout class="secondary" align-center column>
+            <v-flex xs4 class="mt-4 mb-4">
+              <div class="title font-weight-bold lightGreen--text">Login to your account.</div>
             </v-flex>
-            <v-flex
-              xs4
-              class="mt-4 mb-4 login-form"
-            >
+            <v-flex xs4 class="mt-4 mb-4 login-form">
               <v-form v-model="usernameValid">
                 <v-text-field
                   v-model="username"
@@ -41,10 +21,7 @@
                 />
               </v-form>
             </v-flex>
-            <v-flex
-              xs4
-              class="ma-3 mb-5 login-form"
-            >
+            <v-flex xs4 class="ma-3 mb-5 login-form">
               <v-form v-model="pwValid">
                 <v-text-field
                   v-model="password"
@@ -60,10 +37,7 @@
                 />
               </v-form>
             </v-flex>
-            <v-flex
-              xs4
-              class="mx-3 mt-5"
-            >
+            <v-flex xs4 class="mx-3 mt-5">
               <v-btn
                 color="lightGreen"
                 tile
@@ -74,31 +48,19 @@
                 data-cy="login-button"
                 @click="login"
               >
-                <span
-                  :class="{ 'login-button-word': usernameValid && pwValid }"
-                >Login</span>
+                <span :class="{ 'login-button-word': usernameValid && pwValid }">Login</span>
               </v-btn>
             </v-flex>
           </v-layout>
         </v-container>
       </v-card>
     </v-layout>
-    <v-layout
-      class="primary"
-      column
-      justify-space-around
-      align-center
-    >
+    <v-layout class="primary" column justify-space-around align-center>
       <v-flex class="mt-5">
         <v-divider class="divider" />
       </v-flex>
       <v-flex class="mt-4">
-        <router-link
-          to="/users/new"
-          class="link"
-        >
-          Add new users to ENVISION?
-        </router-link>
+        <router-link to="/users/new" class="link">Add new users to ENVISION?</router-link>
       </v-flex>
     </v-layout>
   </v-container>
@@ -120,13 +82,13 @@ type Data = {
   username: string;
   password: string;
   isShow: boolean;
-  usernameRules: Rule[],
+  usernameRules: Rule[];
   pwRules: {
     required: Rule;
     min: Rule;
     emailMatch: Match;
-  }
-}
+  };
+};
 
 export default Vue.extend({
   name: "Login",

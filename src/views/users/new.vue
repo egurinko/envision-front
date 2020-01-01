@@ -6,9 +6,7 @@
         <v-container class="secondary">
           <v-layout class="secondary" align-center column>
             <v-flex xs4 class="mt-4 mb-4">
-              <div class="title font-weight-bold lightGreen--text">
-                Add new users.
-              </div>
+              <div class="title font-weight-bold lightGreen--text">Add new users.</div>
             </v-flex>
             <v-flex xs4 class="mt-4 mb-4 login-form">
               <v-form v-model="usernameValid">
@@ -50,9 +48,7 @@
                 data-cy="login-button"
                 @click="register"
               >
-                <span :class="{ 'login-button-word': usernameValid && pwValid }"
-                  >Register</span
-                >
+                <span :class="{ 'login-button-word': usernameValid && pwValid }">Register</span>
               </v-btn>
             </v-flex>
           </v-layout>
@@ -64,9 +60,7 @@
         <v-divider class="divider" />
       </v-flex>
       <v-flex class="mt-4">
-        <router-link to="/login" class="link" data-cy="link">
-          Already have an account?
-        </router-link>
+        <router-link to="/login" class="link" data-cy="link">Already have an account?</router-link>
       </v-flex>
     </v-layout>
   </v-container>

@@ -6,9 +6,7 @@
       icon="check_circle"
       outlined
       tile
-    >
-      Succeeded !
-    </v-alert>
+    >Succeeded !</v-alert>
 
     <v-alert
       :value="response.status !== '' && response.status !== 200"
@@ -16,9 +14,7 @@
       icon="warning"
       outlined
       tile
-    >
-      {{ response.errors.errorMessage }}
-    </v-alert>
+    >{{ response.errors.errorMessage }}</v-alert>
   </div>
 </template>
 
@@ -31,7 +27,7 @@ export default Vue.extend({
   computed: {
     response: function(): ResponseS {
       return this.$store.getters["response/getResponse"];
-    },
+    }
   }
 });
 </script>

@@ -1,31 +1,15 @@
 <template>
-  <v-app
-    dark
-    class="primary"
-  >
+  <v-app dark class="primary">
     <Loader />
-    <div
-      id="design-bar"
-      class="tertiary" 
-    />
-    <v-container
-      id="app-container"
-      class="primary"
-    >
-      <v-layout
-        class="primary"
-      >
+    <div id="design-bar" class="tertiary" />
+    <v-container id="app-container" class="primary">
+      <v-layout class="primary">
         <v-flex v-if="!isPhone">
           <drawer class="drawer px-3 py-4" />
         </v-flex>
         <v-flex class="main-content">
-          <v-container
-            id="main-content-container"
-            class="primary"
-          >
-            <v-layout
-              class="primary"
-            >
+          <v-container id="main-content-container" class="primary">
+            <v-layout class="primary">
               <v-flex>
                 <tool-bar class="primary" />
                 <router-view />

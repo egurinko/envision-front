@@ -1,29 +1,14 @@
 <template>
   <v-container class="primary">
     <v-layout class="primary" row align-center justify-center>
-      <v-flex
-        v-for="(item, index) in reputations"
-        :key="index"
-        xs5
-        class="ml-3"
-      >
-        <v-btn
-          class="ma-3 ml-5"
-          icon
-          large
-          :data-cy="item.icon"
-          @click="handleReputations(index)"
-        >
+      <v-flex v-for="(item, index) in reputations" :key="index" xs5 class="ml-3">
+        <v-btn class="ma-3 ml-5" icon large :data-cy="item.icon" @click="handleReputations(index)">
           <v-icon
             x-large
             :color="item.icon === 'mood' ? 'lightGreen' : 'lightCritical'"
-          >
-            {{ item.icon }}
-          </v-icon>
+          >{{ item.icon }}</v-icon>
         </v-btn>
-        <v-list-item-title class="drawer-title pr-2">
-          {{ item.title }}
-        </v-list-item-title>
+        <v-list-item-title class="drawer-title pr-2">{{ item.title }}</v-list-item-title>
       </v-flex>
     </v-layout>
   </v-container>

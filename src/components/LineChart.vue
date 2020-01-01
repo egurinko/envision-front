@@ -52,7 +52,7 @@ const options: Chart.ChartOptions & ChartAnnotationOptions = {
 };
 
 // Vue.extend< Method=any, Data=any, Prop=any, Computed=any>
-export default Vue.extend<Chart, any, any, any> ({
+export default Vue.extend<Chart, any, any, any>({
   mixins: [Line, reactiveProp],
   props: {
     title: {
@@ -65,7 +65,7 @@ export default Vue.extend<Chart, any, any, any> ({
     },
     annotation: {
       type: Object as PropType<Annotation>,
-      default: () => {},
+      default: () => {}
     },
     chartData: {
       type: Object as PropType<Chart.ChartData>,
@@ -97,5 +97,4 @@ export default Vue.extend<Chart, any, any, any> ({
     this.renderChart(this.chartData, options);
   }
 });
-
 </script>

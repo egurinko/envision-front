@@ -1,4 +1,9 @@
-import axios, { AxiosAdapter, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
+import axios, {
+  AxiosAdapter,
+  AxiosRequestConfig,
+  AxiosResponse,
+  AxiosError
+} from "axios";
 import { getCookie } from "./controllCookie";
 import store from "../store/index";
 import domain from "./domain";
@@ -50,7 +55,11 @@ export default (requests: Requests) => {
 };
 
 const requestAPI = (request: AxiosRequestConfig): Promise<AxiosResponse> => {
-  const config: AxiosRequestConfig = { baseURL: domain, url: request.url, method: request.method };
+  const config: AxiosRequestConfig = {
+    baseURL: domain,
+    url: request.url,
+    method: request.method
+  };
 
   if (request.method === "GET") {
     if (request.params) {

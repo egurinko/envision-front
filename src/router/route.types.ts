@@ -5,10 +5,10 @@ export enum RouteNames {
   GRAPHS = "Graphs",
   LOGIN = "Login",
   USERS_REGISTRATION = "UsersRegistration",
-  USERS = "Users",
-};
+  USERS = "Users"
+}
 
-type StrRecord = Record<string, any>
+type StrRecord = Record<string, any>;
 type Query<T extends StrRecord> = { query: T };
 type Params<T extends StrRecord> = { params: T };
 
@@ -22,18 +22,18 @@ type Params<T extends StrRecord> = { params: T };
 // );
 
 export type RouteOption = {
-  [RouteNames.HOME]: {},
-  [RouteNames.GRAPHS]: {},
-  [RouteNames.LOGIN]: {},
-  [RouteNames.USERS_REGISTRATION]: {},
-  [RouteNames.USERS]: {},
+  [RouteNames.HOME]: {};
+  [RouteNames.GRAPHS]: {};
+  [RouteNames.LOGIN]: {};
+  [RouteNames.USERS_REGISTRATION]: {};
+  [RouteNames.USERS]: {};
 };
 
 export type Route = {
   path: string;
   name: string;
   component: Vue.Component;
-  meta?: { 
+  meta?: {
     icon: string;
-  }
-}
+  };
+};

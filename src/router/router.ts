@@ -50,7 +50,11 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  store.dispatch("response/setResponse", { status: "", method: "", errors: "" });
+  store.dispatch("response/setResponse", {
+    status: "",
+    method: "",
+    errors: ""
+  });
   next();
 });
 

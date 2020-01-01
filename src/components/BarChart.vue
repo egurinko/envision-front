@@ -50,7 +50,7 @@ const options: Chart.ChartOptions = {
   }
 };
 
-export default Vue.extend<Chart, any, any, any> ({
+export default Vue.extend<Chart, any, any, any>({
   mixins: [Bar, reactiveProp],
   props: {
     title: {
@@ -72,5 +72,4 @@ export default Vue.extend<Chart, any, any, any> ({
     }
   }
 });
-
 </script>

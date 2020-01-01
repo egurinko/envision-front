@@ -7,11 +7,7 @@
     grow
     :value="active"
   >
-    <v-btn
-      v-for="(item, index) in menus"
-      :key="index"
-      @click="handleClick(item.route, index)"
-    >
+    <v-btn v-for="(item, index) in menus" :key="index" @click="handleClick(item.route, index)">
       <span>{{ item.name }}</span>
       <v-icon>{{ item.icon }}</v-icon>
     </v-btn>
@@ -24,7 +20,7 @@ import { Menus } from "./Drawer.vue";
 
 type Data = {
   active: number;
-}
+};
 
 export default Vue.extend({
   name: "Toolbar",
@@ -39,14 +35,20 @@ export default Vue.extend({
       const menus: Menus = [];
       (this.$router as any).options.routes.map((route: Route): void => {
         if (route.meta) {
-          menus.push({ icon: route.meta.icon, route: route.path, name: route.name });
+          menus.push({
+            icon: route.meta.icon,
+            route: route.path,
+            name: route.name
+          });
         }
       });
       return menus;
     }
   },
-  created(): void{
-    const target: number = this.menus.findIndex(menu => menu.route === this.$route.path);
+  created(): void {
+    const target: number = this.menus.findIndex(
+      menu => menu.route === this.$route.path
+    );
     this.active = target;
   },
   methods: {

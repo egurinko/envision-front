@@ -30,7 +30,7 @@ const options: Chart.ChartOptions = {
       chartContext.textBaseline = "middle";
       fontSize = 35;
       chartContext.font = `${fontSize}px Rubik`;
-      
+
       chartContext.fillText(
         Math.round(chart.chart.data.datasets[0].data[0] * 100) + "%",
         chart.chart.width / 2,
@@ -53,5 +53,4 @@ export default Vue.extend<Chart, any, any, any>({
     this.renderChart(this.chartData, options);
   }
 });
-
 </script>

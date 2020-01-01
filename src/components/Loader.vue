@@ -1,18 +1,7 @@
 <template>
-  <v-layout
-    v-if="isLoading"
-    row
-    justify-center
-    align-center
-  >
-    <v-dialog
-      v-model="isLoading"
-      persistent
-    >
-      <sync-loader
-        id="loader"
-        :loading="isLoading" 
-      />
+  <v-layout v-if="isLoading" row justify-center align-center>
+    <v-dialog v-model="isLoading" persistent>
+      <SyncLoader id="loader" :loading="isLoading" />
     </v-dialog>
   </v-layout>
 </template>

@@ -1,32 +1,12 @@
 <template>
-  <v-container
-    :v-if="!isLoading"
-    class="primary container"
-  >
+  <v-container :v-if="!isLoading" class="primary container">
     <Response />
-    <v-btn
-      color="lightGreen"
-      tile
-      outlined
-      small
-      @click="goUserRegistration"
-    >
+    <v-btn color="lightGreen" tile outlined small @click="goUserRegistration">
       <span class="registration pa-1">Register a new user</span>
     </v-btn>
-    <v-layout
-      row
-      wrap
-      justify-center
-      align-start
-    >
-      <v-flex
-        xs12
-        md6
-      >
-        <v-card
-          class="secondary user-table"
-          elevation="0"
-        >
+    <v-layout row wrap justify-center align-start>
+      <v-flex xs12 md6>
+        <v-card class="secondary user-table" elevation="0">
           <v-layout
             v-for="(user, i) in userData"
             :key="i"
@@ -44,32 +24,19 @@
               <div
                 class="detail-left"
                 :class="{ 'detail-left-normal': i !== 0 }"
-              >
-                {{ user.username }}
-              </div>
+              >{{ user.username }}</div>
             </v-flex>
             <v-flex xs6>
-              <div class="detail-right">
-                {{ user.createdAt }}
-              </div>
+              <div class="detail-right">{{ user.createdAt }}</div>
             </v-flex>
-            <v-flex
-              v-if="i === 0"
-              xs12
-            >
+            <v-flex v-if="i === 0" xs12>
               <v-divider />
             </v-flex>
           </v-layout>
         </v-card>
       </v-flex>
-      <v-flex
-        xs12
-        md6
-      >
-        <v-card
-          class="secondary contribution-card"
-          elevation="0"
-        >
+      <v-flex xs12 md6>
+        <v-card class="secondary contribution-card" elevation="0">
           <BarChart
             class="px-1 contribution-chart"
             title="TRAINING DATA CONTRIBUTIONS"
@@ -91,27 +58,27 @@ import Response from "../../components/Response.vue";
 import makeCreatedAt from "../../utils/makeCreatedAt";
 import Chart from "chart.js";
 
-type Contribution = { 
+type Contribution = {
   _id: string;
   username: string;
   timestamp: number;
-}
-
-type User = { 
-  _id: string;
-  username: string;
-  timestamp: number;
-}
-
-interface Data  {
-  users: User[] | null;
-  contributions: Contribution[] | null;
 };
 
-type UserData = { 
+type User = {
+  _id: string;
+  username: string;
+  timestamp: number;
+};
+
+interface Data {
+  users: User[] | null;
+  contributions: Contribution[] | null;
+}
+
+type UserData = {
   username: string;
   createdAt: string;
-}
+};
 
 interface Method {
   init: () => Promise<void>;
@@ -173,7 +140,7 @@ export default Vue.extend({
       return userData;
     }
   },
-  created (): void {
+  created(): void {
     (this as any).init();
   },
   methods: {
@@ -198,7 +165,7 @@ export default Vue.extend({
     goUserRegistration(): void {
       this.$router.push("/users/new");
     }
-  },
+  }
 });
 </script>
 <style scoped>
