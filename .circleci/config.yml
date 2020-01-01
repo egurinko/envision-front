@@ -21,11 +21,11 @@ jobs:
       - run:
           name: Install dependencies
           command: yarn install
-      
+
       - run:
           name: Build app
           command: yarn build
-      
+
       - persist_to_workspace:
           root: ~/app
           paths:
@@ -35,7 +35,7 @@ jobs:
           name: Start app
           command: yarn dev
           background: true
-      
+
       - run:
           command: yarn cypress:install
 
@@ -45,9 +45,16 @@ jobs:
 
       - save_cache:
           paths:
-            - node_modules
+            - ~/.cache/yarn
           key: v1-dependencies-{{ checksum "package.json" }}
-  
+
+      - store_artifacts:
+          path: cypress/videos
+          destination: test-results-cypress
+      - store_artifacts:
+          path: cypress/screenshots
+          destination: test-results-cypress
+
   deploy-prd:
     docker:
       - image: circleci/python:2.7-jessie

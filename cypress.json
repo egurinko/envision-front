@@ -1,8 +1,7 @@
 {
-    "baseUrl": "http://localhost:8080",
-    "env": {
-        "username": "super",
-        "password": "password"
-    },
-    "video": false
+  "baseUrl": "http://localhost:8080",
+  "env": {
+    "username": "super",
+    "password": "password"
+  }
 }
