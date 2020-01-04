@@ -1,6 +1,6 @@
 import { Actions } from "vuex";
 import { State, IActions, IGetters, IMutations } from "../../types";
-import constant from "../../../../constant";
+import constant from "../../../utils/constant";
 
 const actions: Actions<
   State["ui"],
