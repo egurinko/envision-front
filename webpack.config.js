@@ -27,7 +27,9 @@ module.exports = {
             loader: "sass-loader",
             options: {
               implementation: require("sass"),
-              fiber: Fiber
+              sassOptions: {
+                fiber: false
+              }
             }
           }
         ]
