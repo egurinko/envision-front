@@ -51,7 +51,8 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              name: "assets/[name].[ext]"
+              name: "assets/[name].[ext]",
+              esModule: false
             }
           }
         ]
