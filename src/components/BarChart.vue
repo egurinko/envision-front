@@ -10,9 +10,11 @@ const options: Chart.ChartOptions = {
   scales: {
     xAxes: [
       {
-        barThickness: 18,
-        maxBarThickness: 18,
-        minBarLength: 5,
+        ticks: {
+          // barThickness: 18,
+          max: 18
+        },
+        // minBarLength: 5,
         gridLines: {
           display: false
         },

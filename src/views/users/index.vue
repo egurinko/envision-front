@@ -24,7 +24,9 @@
               <div
                 class="detail-left"
                 :class="{ 'detail-left-normal': i !== 0 }"
-              >{{ user.username }}</div>
+              >
+                {{ user.username }}
+              </div>
             </v-flex>
             <v-flex xs6>
               <div class="detail-right">{{ user.createdAt }}</div>

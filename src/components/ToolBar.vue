@@ -1,6 +1,12 @@
 <template>
-  <v-toolbar class="elevation-0 toolbar">
-    <img v-if="isPhone" width="35" height="35" class="ml-2" :src="require('../assets/logo2.png')" />
+  <v-toolbar class="elevation-0">
+    <img
+      v-if="isPhone"
+      width="35"
+      height="35"
+      class="ml-2"
+      :src="require('../assets/logo2.png')"
+    />
     <v-btn
       v-if="!isLoggedIn"
       color="lightGreen"
@@ -70,9 +76,6 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.toolbar {
-  padding-top: 2%;
-}
 .toolbar-button {
   margin-left: auto;
   margin-right: 3%;

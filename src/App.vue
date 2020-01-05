@@ -30,7 +30,6 @@ import Drawer from "./components/Drawer.vue";
 import ToolBar from "./components/ToolBar.vue";
 import Loader from "./components/Loader.vue";
 import BottomNavigation from "./components/BottomNavigation.vue";
-import constant from "../constant.js";
 import { getCookie } from "./utils/controllCookie";
 
 export default Vue.extend({

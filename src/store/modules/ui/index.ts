@@ -1,4 +1,4 @@
-import constant from "../../../../constant";
+import constant from "../../../utils/constant";
 import actions from "./actions";
 import mutations from "./mutations";
 import getters from "./getters";
