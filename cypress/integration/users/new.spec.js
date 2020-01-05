@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 describe("Users New", () => {
   const date = new Date().getTime();
   const username = String(date).slice(5);
@@ -36,9 +34,9 @@ describe("Users New", () => {
     });
   });
 
-  // it("new user should be rendered", () => {
-  //   cy.visit("/users");
-  //   cy.wait(["@getUsers", "@getContributions"]);
-  //   expect(cy.contains(username)).to.exist;
-  // });
+  it("new user should be rendered", () => {
+    cy.visit("/users");
+    cy.wait(["@getUsers", "@getContributions"]);
+    expect(cy.contains(username)).to.exist;
+  });
 });
