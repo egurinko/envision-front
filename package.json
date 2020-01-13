@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-env": "^7.8.2",
     "@types/axios": "^0.14.0",
     "@types/chart.js": "^2.9.8",
     "@types/moment-timezone": "^0.5.12",
