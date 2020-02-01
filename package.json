@@ -35,7 +35,7 @@
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.2",
     "@types/axios": "^0.14.0",
-    "@types/chart.js": "^2.9.8",
+    "@types/chart.js": "^2.9.11",
     "@types/moment-timezone": "^0.5.12",
     "@types/vue-router": "^2.0.0",
     "@types/webpack-env": "^1.15.0",
