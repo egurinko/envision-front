@@ -1081,10 +1081,12 @@
   dependencies:
     axios "*"
 
-"@types/chart.js@^2.9.8":
-  version "2.9.8"
-  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.9.8.tgz#35b31f6fb9a75f8d4e498e7368752a81d8272304"
-  integrity sha512-7mL20QxLkU3EjWw8IgjWW+guzMfegPKtde6OcyDmNpe9aWvj3lfFC3PKQPkhzhTdbsRAN1g1Guso1MW7x1d7ig==
+"@types/chart.js@^2.9.11":
+  version "2.9.11"
+  resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.9.11.tgz#2b73fe59e78dfe31c2f8d6c6d0c169e98e65c16b"
+  integrity sha512-xuDh5pZWci1Z5DUkiGTTLIBymxUe8KMfo1JYM5HTY7LXURSCej458uMrD4eYn4v+BTYTZfKlTRNIk8jW4nTaOg==
+  dependencies:
+    moment "^2.10.2"
 
 "@types/events@*":
   version "3.0.0"
