@@ -45,7 +45,7 @@
     "babel-polyfill": "^6.26.0",
     "copy-webpack-plugin": "^5.1.1",
     "core-js": "3",
-    "cross-env": "^6.0.3",
+    "cross-env": "^7.0.0",
     "css-loader": "^3.4.2",
     "cypress": "^3.8.3",
     "deepmerge": "^4.2.2",
