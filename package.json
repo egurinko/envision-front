@@ -70,7 +70,7 @@
     "vue-template-compiler": "^2.6.12",
     "vuetify-loader": "^1.4.3",
     "wait-on": "^5.2.0",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }
