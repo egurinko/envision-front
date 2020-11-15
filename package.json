@@ -61,7 +61,7 @@
     "prettier": "^2.0.5",
     "sass": "^1.26.7",
     "sass-loader": "^8.0.2",
-    "serverless": "^1.62.0",
+    "serverless": "^2.11.1",
     "style-loader": "^1.2.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.9.7",
