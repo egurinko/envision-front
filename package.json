@@ -29,7 +29,7 @@
     "vue-router": "^3.4.9",
     "vue-spinner": "^1.0.4",
     "vuetify": "^2.4.2",
-    "vuex": "^3.6.0"
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
