@@ -39,7 +39,7 @@
     "@types/moment-timezone": "^0.5.30",
     "@types/vue-router": "^2.0.0",
     "@types/webpack-env": "^1.16.0",
-    "@vue/babel-preset-app": "^4.5.10",
+    "@vue/babel-preset-app": "^4.5.11",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-polyfill": "^6.26.0",
