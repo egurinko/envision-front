@@ -1,0 +1,40 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "11:00"
+  open-pull-requests-limit: 10
+  reviewers:
+  - egurinko
+  assignees:
+  - egurinko
+  ignore:
+  - dependency-name: webpack
+    versions:
+    - 5.19.0
+  - dependency-name: vuex
+    versions:
+    - 3.6.2
+  - dependency-name: sass-loader
+    versions:
+    - 10.1.1
+  - dependency-name: eslint
+    versions:
+    - 7.19.0
+  - dependency-name: vuetify
+    versions:
+    - 2.4.3
+  - dependency-name: cypress
+    versions:
+    - 6.3.0
+  - dependency-name: "@vue/babel-preset-app"
+    versions:
+    - 4.5.11
+  - dependency-name: "@types/chart.js"
+    versions:
+    - 2.9.30
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 7.2.0
