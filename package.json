@@ -46,7 +46,7 @@
     "copy-webpack-plugin": "^7.0.0",
     "core-js": "3",
     "cross-env": "^7.0.3",
-    "css-loader": "^5.0.1",
+    "css-loader": "^5.2.4",
     "cypress": "^6.3.0",
     "deepmerge": "^4.2.2",
     "eslint": "^7.19.0",
